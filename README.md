@@ -21,6 +21,37 @@ The goal of this project was to bridge the gap between complex survival analysis
 * **Clinical Efficacy:** Patients on the maintenance chemotherapy regimen stayed in remission for a **median of 31 weeks**—effectively extending remission by an average of **2 months (8 weeks)** compared to the nonmaintenance  group.
 * **Understanding the Risk Table:** The **"Number at Risk"** metrics at the bottom of the plot indicate the exact headcount of patients who were still alive, enrolled in the study, and actively "at risk" of experiencing a relapse at each specific milestone.
 
+## Libraries and Functions
+
+### Libraries Reference TAble
+
+| Library Name | Official Definition | Core Function in This Project |
+| :--- | :--- | :--- |
+| **`survival`** | The R package for survival analysis. It contains all the foundational routines for computing survival curves, managing censoring, and handling time-to-event data. | • Used to build the primary survival object via `Surv()`. <br>• Used to calculate the Kaplan-Meier mathematical model using `survfit()`. |
+| **`ggplot2`** | A widely used data visualization package for R based on the *Grammar of Graphics*. | • Used during the exploratory data analysis (EDA) phase to build baseline histograms and bar charts (`geom_histogram()`, `geom_bar()`) to check for missing values and sample distributions. |
+| **`survminer`** | A specialized extension package built on top of `ggplot2` designed specifically to facilitate the formatting, customization, and printing of publication-ready survival analysis curves. | • Used to generate the final, business-ready plot using `ggsurvplot()`. <br>• Handled the layout logic for truncating the axis, renaming headers, and perfectly aligning the **Number at Risk** table beneath the chart. |
+
+----
+
+### Functions Reference Table
+
+| Function Name | Package | Purpose & Meaning in Your Code |
+| :--- | :--- | :--- |
+| **`library()`** | `base` | Loads the specified package into your R environment so you can use its specialized functions (e.g., loading `survival` or `survminer`). |
+| **`head()`** | `utils` | Displays the first 6 rows of the dataset (`leukemia`). Quickly inspect column names, data types, and layout. |
+| **`ggplot()`** | `ggplot2` | Initializes a canvas for data visualization. Declare the data source and map variables to the axes (`aes()`). |
+| **`geom_histogram()`** | `ggplot2` | Adds a histogram layer to the plot to visualize the continuous distribution of tracking times (`time`) and check for missing values. |
+| **`geom_bar()`** | `ggplot2` | Adds a bar chart layer to count discrete categories. You used this to check the balance of events (`status`) and treatments (`x`). |
+| **`Surv()`** | `survival` | Creates a standardized **Survival Object**. This merges the time-to-event variable (`time`) and censoring indicator (`status`) into a single format that R's survival algorithms can read. |
+| **`survfit()`** | `survival` | Fits the actual mathematical survival model. By using the formula `df_surv ~ x`, it calculates the step-down survival probabilities over time separately for each treatment group. |
+| **`print()`** | `base` | Outputs a high-level summary of the model object, which is where you extracted the specific **median survival weeks** (31 vs 23) for your business metrics. |
+| **`summary()`** | `base` | Generates a detailed, time-by-time breakdown of the survival curves, showing exactly when events occurred and the changing survival probabilities at each interval. |
+| **`ggsurvplot()`** | `survminer` | The primary plotting function that combines your survival model and data. It translates the mathematical curves into a customized visual layout tailored for stakeholder reporting. |
+| **`c()`** | `base` | A core R function used to combine values into a vector or list. You used it to pass pairs of values to arguments like `xlim = c(0, 50)` and `palette = c("#00AFBB", "#E7B")`. |
+
+
+
+
 
 
 
