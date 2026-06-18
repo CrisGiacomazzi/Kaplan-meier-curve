@@ -50,13 +50,24 @@ The goal of this project was to bridge the gap between complex survival analysis
 | **`c()`** | `base` | A core R function used to combine values into a vector or list. You used it to pass pairs of values to arguments like `xlim = c(0, 50)` and `palette = c("#00AFBB", "#E7B")`. |
 
 
-
-
-
-
-
-
 # Source
+
+## Data Source
+
+The dataset used in this project is the **Leukemia (AML)** trial dataset, natively available through the R `survival` package. 
+
+* **Origin:** Data from a clinical trial originally published by Embury et al. (1977) in the *Western Journal of Medicine*, analyzing the efficacy of maintenance chemotherapy in patients with Acute Myelogenous Leukemia (AML).
+* **Access in R:** The dataset can be loaded directly using `data(aml)` or `data(leukemia)` once the `survival` library is active.
+* **Cohort Size:** 23 patients tracked across two treatment arms.
+
+### Dataset Variables:
+| Variable Name | Description | Type |
+| :--- | :--- | :--- |
+| `time` | Survival or response time tracked in weeks | Continuous |
+| `status` | Event indicator (1 = Relapsed/Dead, 0 = Censored) | Binary |
+| `x` | Treatment maintenance indicator (`Maintained` vs `Nonmaintained`) | Categorical |
+
+## Scientific literature
 
 MedlinePlus [Internet]. (2024). Bethesda (MD): National Library of Medicine (US); [updated Jun 24; cited 2020 Jul 1]. Available from: https://medlineplus.gov/ency/article/001299.htm
 
