@@ -16,7 +16,7 @@ The goal of this project was to bridge the gap between complex survival analysis
 
 <img width="2530" height="1660" alt="image" src="https://github.com/user-attachments/assets/9553c9d2-f601-457c-9b78-b5e500d55330" />
 
-### Key Findings & Interpretation
+# Key Findings & Interpretation
 
 * **Clinical Efficacy:** Patients on the maintenance chemotherapy regimen stayed in remission for a **median of 31 weeks**—effectively extending remission by an average of **2 months (8 weeks)** compared to the nonmaintenance  group.
 * **Understanding the Risk Table:** The **"Number at Risk"** metrics at the bottom of the plot indicate the exact headcount of patients who were still alive, enrolled in the study, and actively "at risk" of experiencing a relapse at each specific milestone.
